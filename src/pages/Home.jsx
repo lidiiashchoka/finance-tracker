@@ -1,9 +1,8 @@
-// src/pages/Home.jsx
 import { FaChartLine, FaWallet, FaMoneyBillWave } from "react-icons/fa";
 
 const Home = () => {
   return (
-    <section className="px-6 md:px-10 py-20 bg-gradient-to-r from-indigo-500 to-blue-600 text-white min-h-screen grid">
+    <section className="px-6 md:px-10 py-24 bg-gradient-to-r from-indigo-500 to-blue-600 text-white min-h-screen grid">
       <div className="container mx-auto flex flex-col items-center justify-center h-full self-stretch">
         <h1 className="text-4xl font-extrabold mb-6 text-center">
           Ласкаво просимо до FinanceTracker
