@@ -1,14 +1,11 @@
 import { useState } from "react";
-import { NavLink, Link } from "react-router";
+import { NavLink } from "react-router";
+
 import { FiMenu, FiX } from "react-icons/fi";
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
-  const user = true;
-  const {
-    logout,
-  } = () => {
-    console.log("Logout function called");
-  };
+  const { user, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
