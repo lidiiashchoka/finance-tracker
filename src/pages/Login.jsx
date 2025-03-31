@@ -7,6 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (user) {
@@ -16,8 +17,8 @@ const Login = () => {
 
   const handleLogin = () => {
     if (username.trim() && password.trim()) {
-      login(username);
-      navigate("/dashboard");
+      console.log("▶️ Викликається login() з:", username, password);
+      login(username, password);
     }
   };
 
@@ -29,6 +30,7 @@ const Login = () => {
         доходи та витрати.
       </p>
       <div className="bg-white text-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <input
           type="text"
           placeholder="Ім'я користувача"

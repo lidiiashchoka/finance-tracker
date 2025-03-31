@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router";
 
 const Transactions = () => {
-  const { user, transactions, setModalOpen } = useAuth();
+  const { user, transactions, setModalOpen, deleteTransaction } = useAuth(); // Додано deleteTransaction
   const navigate = useNavigate();
 
   if (!user) {
@@ -37,6 +37,7 @@ const Transactions = () => {
                   <th className="p-3 text-left">Категорія</th>
                   <th className="p-3 text-right">Сума</th>
                   <th className="p-3 text-right">Дата</th>
+                  <th className="p-3 text-right">Дії</th>
                 </tr>
               </thead>
               <tbody>
@@ -51,7 +52,17 @@ const Transactions = () => {
                     >
                       {t.amount}€
                     </td>
-                    <td className="p-3 text-right text-gray-600">{t.date}</td>
+                    <td className="p-3 text-right text-gray-600">
+                      {new Date(t.date).toLocaleString()}
+                    </td>
+                    <td className="p-3 text-right">
+                      <button
+                        onClick={() => deleteTransaction(t.id)}
+                        className="text-red-500 hover:underline"
+                      >
+                        Видалити
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
