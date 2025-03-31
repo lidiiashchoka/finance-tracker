@@ -49,7 +49,7 @@ const Dashboard = () => {
     .filter((t) => t.type === "expense")
     .reduce((acc, t) => acc + Number(t.amount), 0);
 
-  const recentTransactions = transactions.slice(-10).reverse();
+  const recentTransactions = transactions.slice(-10);
 
   const incomeCategories = transactions
     .filter((t) => t.type === "income")
