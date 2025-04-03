@@ -8,7 +8,6 @@ import Transactions from "./pages/Transactions";
 import Navbar from "./components/Navbar";
 import "./index.css";
 import { AuthProvider, useAuth } from "./context/AuthContext";
-import TransactionModal from "./components/TransactionModal";
 
 const ProtectedRoute = ({ element }) => {
   const { user } = useAuth();
